@@ -37,14 +37,23 @@
     {/each}
   </div>
 
-  <p>
-    These images were taken on an Insta360 One X2. If you are thinking of getting one,
-    maybe you'd like to use <a href="https://amzn.to/3d7g7eU">my Amazon affiliate link</a>. <span class="text-sm"><span class="italic">&larr; monetization.</span> 😎</span>
-  </p>
-
-  <p>
-    I believe I obtained permission to photograph everyone in these images; nonetheless,
-    if anyone wants their image removed, I intend to respect any such requests.
-  </p>
+  <div class="text-sm">
+    <h2>Notes</h2>
+    <p>
+      The viewer for the images is
+      <a href="https://github.com/dnotes/svelte-summit-2022/blob/main/src/lib/PhotoSphere.svelte">
+      a bare-bones Svelte wrapper</a> for the
+      <a href="https://photo-sphere-viewer.js.org/">Photo Sphere Viewer</a> library.
+      All images were taken on an Insta360 One X2. If you are thinking of getting one,
+      perhaps you'd like to use <a href="https://amzn.to/3d7g7eU">my Amazon affiliate link</a>.
+      <span class="text-xs"><span class="italic">&larr; monetization.</span> 😎</span>
+    </p>
+    <p>
+      I believe I obtained permission to photograph everyone in these images; nonetheless,
+      if anyone wants their image removed, I intend to respect any such requests.
+    </p>
+    <div class="text-center"><a href="https://kit.svelte.dev" class="font-normal">Powered by
+      <img src="/favicon.png" alt="the SvelteKit logo" class="w-6 h-6 inline-block"> SvelteKit</a></div>
+  </div>
 
 </div>
