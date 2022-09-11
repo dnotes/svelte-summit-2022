@@ -23,6 +23,7 @@ $: if (src && viewer) {
     zoom: options?.defaultZoomLvl ?? undefined,
     speed: "20rpm",
   })
+  viewer.setOptions(options)
 }
 
 onMount(() => {

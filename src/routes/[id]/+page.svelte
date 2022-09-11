@@ -1,5 +1,4 @@
 <script lang="ts">
-import type { Viewer } from "photo-sphere-viewer";
 
 // @ts-ignore Why is this not recognized?
 import content from "$lib/content.yml"
@@ -22,8 +21,7 @@ $: hasPrev = idx > 0
       navbar: [
         "autorotate",
         "zoom",
-        "fullscreen",
-        "download",
+        "caption",
         {
           id: 'home',
           content: 'home',
@@ -52,11 +50,13 @@ $: hasPrev = idx > 0
             }
           },
         },
+        "download"
       ],
       defaultLat: img?.latitude || 0,
       defaultLong: img?.longitude || 0,
       defaultZoomLvl: img?.zoom || 0,
       fisheye: img?.fisheye ?? 1,
+      caption: img?.caption ?? 'Some participants at the Svelte Summit 2022'
     }}
   />
 {/if}
