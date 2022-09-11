@@ -1,4 +1,6 @@
 <script lang="ts">
+import type { Viewer } from "photo-sphere-viewer";
+
 // @ts-ignore Why is this not recognized?
 import content from "$lib/content.yml"
 import { page } from '$app/stores'
@@ -13,7 +15,16 @@ $: hasPrev = idx > 0
 
 </script>
 
-{#if idx !== -1}
+<svelte:head>
+  {#if hasNext}
+    <link rel="preload" as="image" href="/images/{content[idx+1].id}.jpg">
+  {/if}
+  {#if hasPrev}
+    <link rel="preload" as="image" href="/images/{content[idx-1].id}.jpg">
+  {/if}
+</svelte:head>
+
+{#if img}
   <PhotoSphere
     src="/images/{img.id}.jpg"
     options={{

@@ -1,6 +1,4 @@
 <script lang="ts">
-// @ts-ignore
-import yaml from 'js-yaml'
 import { Viewer, type ViewerOptions } from 'photo-sphere-viewer'
 import { onMount } from 'svelte';
 
@@ -11,7 +9,7 @@ let cls:string|undefined = undefined
 export {cls as class}
 
 let el:HTMLElement
-let viewer:Viewer
+export let viewer:Viewer|undefined = undefined
 
 export let options:Omit<ViewerOptions,"container"|"panorama"> = {}
 
@@ -20,8 +18,8 @@ $: if (src && viewer) {
     showLoader: false
   })
   viewer.animate({
-    latitude: options?.defaultLat ?? undefined,
-    longitude: options?.defaultLong ?? undefined,
+    latitude: options?.defaultLat ?? 0,
+    longitude: options?.defaultLong ?? 0,
     zoom: options?.defaultZoomLvl ?? undefined,
     speed: "20rpm",
   })
@@ -30,7 +28,7 @@ $: if (src && viewer) {
 onMount(() => {
   viewer = new Viewer({ ...options, panorama:src, container:el })
   return () => {
-    viewer.destroy()
+    if (viewer) viewer.destroy()
   }
 })
 

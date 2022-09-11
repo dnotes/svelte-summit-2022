@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-ignore tell me why
   import content from '$lib/content.yml'
   const alt = 'Participants at the Svelte Summit in Stockholm, September 8-9, 2022'
 </script>
@@ -19,7 +20,7 @@
     {#each content as img}
       {#if img.section === 'conference'}
         <a href="/{img.id}" class="not-prose block border-4 border-black w-48 h-24">
-          <img src="/images/{img.id}_screen.jpg" alt="{img.description || alt}">
+          <img src="/images/{img.id}_screen.jpg" alt="{img.caption || alt}">
         </a>
       {/if}
     {/each}
@@ -30,7 +31,7 @@
     {#each content as img}
       {#if img.section === 'party'}
         <a href="/{img.id}" class="not-prose block border-4 border-black w-48 h-24">
-          <img src="/images/{img.id}_screen.jpg" alt="{img.description || alt}">
+          <img src="/images/{img.id}_screen.jpg" alt="{img.caption || alt}">
         </a>
       {/if}
     {/each}
@@ -39,6 +40,11 @@
   <p>
     These images were taken on an Insta360 One X2. If you are thinking of getting one,
     maybe you'd like to use <a href="https://amzn.to/3d7g7eU">my Amazon affiliate link</a>. <span class="text-sm"><span class="italic">&larr; monetization.</span> 😎</span>
+  </p>
+
+  <p>
+    I believe I obtained permission to photograph everyone in these images; nonetheless,
+    if anyone wants their image removed, I intend to respect any such requests.
   </p>
 
 </div>
