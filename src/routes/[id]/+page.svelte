@@ -15,15 +15,6 @@ $: hasPrev = idx > 0
 
 </script>
 
-<svelte:head>
-  {#if hasNext}
-    <link rel="preload" as="image" href="/images/{content[idx+1].id}.jpg">
-  {/if}
-  {#if hasPrev}
-    <link rel="preload" as="image" href="/images/{content[idx-1].id}.jpg">
-  {/if}
-</svelte:head>
-
 {#if img}
   <PhotoSphere
     src="/images/{img.id}.jpg"
@@ -69,3 +60,12 @@ $: hasPrev = idx > 0
     }}
   />
 {/if}
+
+<div class="hidden">
+  {#if hasNext}
+    <img src="/images/{content[idx+1].id}.jpg" alt="">
+  {/if}
+  {#if hasPrev}
+    <img src="/images/{content[idx-1].id}.jpg" alt="">
+  {/if}
+</div>
