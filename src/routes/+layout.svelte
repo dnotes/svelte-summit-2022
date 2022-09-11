@@ -3,7 +3,8 @@
 </script>
 
 <svelte:head>
-  <title>Svelte Summit - September 2022, Stockholm</title>
+  <title>Images from Svelte Summit 2022</title>
+  <meta name="description" content="Some 360° images from the Svelte Summit, September 8-9 2022, Stockholm"/>
 </svelte:head>
 
 <div class="w-screen h-screen flex flex-col">
